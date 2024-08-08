@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Modal</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="showModal=true" class="button">Show Modal</button>
+      <transition name="fade" appear>
+        <div
+          class="modal-overlay"
+          v-if="showModal"
+          @click="showModal=false"
+        ></div>
+      </transition>
+      <transition name="pop" appear>
+        <div class="modal" role="dialog" v-if="showModal">
+          <h1>Vue Transitions</h1>
+          <p>
+            The <code>&lt;transition&gt;</code> component in Vue can create
+            wonderful animated entrances and exits.
+          </p>
+          <button @click="showModal = false" class="button">Hide Modal</button>
+        </div>
+      </transition>
+    </div>
+
+    <div class="panels-layout">
+      <h1>header</h1>
+      <p>paragraph</p>
+      <div>
+        <p>div paragraph</p>
+        <span>div span</span>
+      </div>
+      <ul>
+        <li>Monte</li>
+        <li>span</li>
+      </ul>
+      <h4>span</h4>
+      header
+    </div>
+
+    <!-- Script -->
+    <script type="module">
+      import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+      createApp({
+        data() {
+          return {
+            showModal: true,
+          }
+        },
+      }).mount('#app')
+    </script>
+  </body>
+</html>
+

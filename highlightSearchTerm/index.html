@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highlight Search Term</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h2>Highlight Search Term</h2>
+    <div class="container">
+      <div class="search-container">
+        <label for="search">Search within quoted text</label>
+        <input
+          id="search"
+          placeholder="Type `web` for example"
+          type="search"
+          autocomplete="off"
+        />
+      </div>
+
+      <button onclick="highlightSearchTerm()">Highlight Java</button>
+
+      <div id="box_1">
+        <figure>
+          <blockquote
+            id="box_2"
+            cite="https://en.wikipedia.org/wiki/JavaScript"
+          >
+            Alongside HTML and CSS, JavaScript is one of the core technologies
+            of the World Wide Web. JavaScript enables interactive web pages and
+            is an essential part of web applications. The vast majority of
+            websites use it for client-side page behavior, and all major web
+            browsers have a dedicated JavaScript engine to execute it.
+          </blockquote>
+        </figure>
+
+        <ul>
+          <li>div</li>
+          <li>li</li>
+          <li>article</li>
+          <li>blockquote</li>
+          <li>figure</li>
+          <li>test li</li>
+        </ul>
+        <p>test paragraph</p>
+        <div>test div</div>
+      </div>
+    </div>
+  </body>
+</html>
+
